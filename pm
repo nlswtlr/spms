@@ -36,7 +36,7 @@ const argMapping = {
 
   parameter.push(...restArgs);
 
-  const cmd = spawn(nodePackageManager, parameter);
+  const cmd = spawn(nodePackageManager, parameter, { encoding: "utf-8", env: { ...process.env, FORCE_COLOR: 1 } });
   cmd.stdout.pipe(process.stdout);
   cmd.stderr.pipe(process.stderr);
 })();
