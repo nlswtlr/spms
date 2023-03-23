@@ -28,7 +28,7 @@ const argMapping = {
   const parameter = [];
 
   if (mappedCommand) {
-    if (mappedCommand !== "start" || mappedCommand !== "install") {
+    if ((mappedCommand !== "start" || mappedCommand !== "install") && nodePackageManager === "npm") {
       parameter.push("run");
     }
     parameter.push(mappedCommand);
